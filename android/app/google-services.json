@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "744850158885",
+    "project_id": "times-87de9",
+    "storage_bucket": "times-87de9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744850158885:android:cd2252207ba5a7ea23d6cc",
+        "android_client_info": {
+          "package_name": "com.example.time"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqwGEguiaUzvPx0VteY_UfsP1TMLvAH8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
