@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-final CollectionReference stu =FirebaseFirestore.instance.collection('time');
+final CollectionReference stu = FirebaseFirestore.instance.collection('time');
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
