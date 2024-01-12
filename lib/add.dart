@@ -6,7 +6,24 @@ class edit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      appBar: AppBar(
+        title: Text('CRUD'),
+        backgroundColor: Colors.lightGreen,
+      ),
+      backgroundColor: Colors.white54,
+      body: Center(
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                TextField(),
+                TextField()
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
