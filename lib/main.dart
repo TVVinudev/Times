@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:time/edit.dart';
 import 'package:time/firebase_options.dart';
 import 'package:time/read.dart';
 
@@ -25,6 +26,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
      home: read(),
+      routes: {
+        'edit' : (context) => edit(),
+      },
     );
   }
 }

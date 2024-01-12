@@ -56,7 +56,7 @@ class _readState extends State<read> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-
+          Navigator.of(context).pushNamed('edit');
         },
         backgroundColor: Colors.lightGreen,
         child: Icon(Icons.add),
