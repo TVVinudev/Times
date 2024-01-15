@@ -1,20 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:time/add.dart';
 
-class edit extends StatelessWidget {
-   edit({super.key});
+class update extends StatelessWidget {
+  final String id;
+  update({super.key, required this.id});
 
-  final TextEditingController name = TextEditingController();
-  final TextEditingController number = TextEditingController();
+  final TextEditingController updateName = TextEditingController();
+  final TextEditingController updateNumber = TextEditingController();
 
-  add(String _name, String _number) async{
-    await FirebaseFirestore.instance.collection('time').add({
+  Update(String _name,String _number) async{
+   final result = await FirebaseFirestore.instance.collection('time').doc(id).update({
       'name':_name,
       'number':_number,
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +31,16 @@ class edit extends StatelessWidget {
             child: Column(
               children: [
                 TextField(
-                  controller: name,
+                  controller: updateName,
                   keyboardType: TextInputType.text,
                 ),
                 TextField(
-                  controller: number,
+                  controller: updateNumber,
                   keyboardType: TextInputType.number,
                 ),
                 MaterialButton(
                   onPressed: () {
-                    add(name.text, number.text);
+                  Update(updateName.text, updateNumber.text);
                   },
                   elevation: 4,
                   child: Padding(
@@ -52,7 +52,7 @@ class edit extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.lightGreen,
                       ),
-                      child: Center(child: Text('ADD')),
+                      child: Center(child: Text('update')),
                     ),
                   ),
                 )

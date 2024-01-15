@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:time/update.dart';
 
 class read extends StatefulWidget {
   const read({super.key});
@@ -25,6 +26,8 @@ class _readState extends State<read> {
               itemCount:snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index) {
                 final DocumentSnapshot snap =snapshot.data!.docs[index];
+                final id = snap.id;
+                print(id);
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
@@ -40,7 +43,9 @@ class _readState extends State<read> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.edit),
+                            IconButton(onPressed: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=> update(id: id)));
+                          }, icon: Icon(Icons.edit)),
                             Icon(Icons.delete)
                           ],
                         ),

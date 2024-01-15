@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:time/add.dart';
 import 'package:time/firebase_options.dart';
 import 'package:time/read.dart';
+import 'package:time/update.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
