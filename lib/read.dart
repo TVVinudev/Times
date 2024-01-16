@@ -11,9 +11,6 @@ class read extends StatefulWidget {
 }
 final CollectionReference stu = FirebaseFirestore.instance.collection('time');
 
-// delete(String id) async {
-//   await FirebaseFirestore.instance.collection('time').doc(id).delete();
-// }
 
 class _readState extends State<read> {
   @override

@@ -10,3 +10,11 @@ Update(String _name,String _number,String id) async{
     'number':_number,
   });
 }
+
+
+add(String _name, String _number) async{
+  await FirebaseFirestore.instance.collection('time').add({
+    'name':_name,
+    'number':_number,
+  });
+}

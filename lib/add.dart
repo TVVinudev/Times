@@ -1,20 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:time/crud.dart';
 
 class edit extends StatelessWidget {
    edit({super.key});
 
   final TextEditingController name = TextEditingController();
   final TextEditingController number = TextEditingController();
-
-  add(String _name, String _number) async{
-    await FirebaseFirestore.instance.collection('time').add({
-      'name':_name,
-      'number':_number,
-    });
-  }
-
 
   @override
   Widget build(BuildContext context) {
