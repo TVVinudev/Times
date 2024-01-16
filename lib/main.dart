@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
      home: read(),
       routes: {
+        'home' : (context) => read(),
         'edit' : (context) => edit(),
       },
     );

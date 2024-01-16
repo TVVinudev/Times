@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:time/add.dart';
@@ -41,6 +43,7 @@ class update extends StatelessWidget {
                 MaterialButton(
                   onPressed: () {
                   Update(updateName.text, updateNumber.text);
+                  Navigator.of(context).pushNamed('home');
                   },
                   elevation: 4,
                   child: Padding(

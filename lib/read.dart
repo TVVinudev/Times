@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:time/crud.dart';
 import 'package:time/update.dart';
 
 class read extends StatefulWidget {
@@ -9,6 +10,10 @@ class read extends StatefulWidget {
   State<read> createState() => _readState();
 }
 final CollectionReference stu = FirebaseFirestore.instance.collection('time');
+
+// delete(String id) async {
+//   await FirebaseFirestore.instance.collection('time').doc(id).delete();
+// }
 
 class _readState extends State<read> {
   @override
@@ -46,7 +51,9 @@ class _readState extends State<read> {
                             IconButton(onPressed: (){
                             Navigator.push(context,MaterialPageRoute(builder: (context)=> update(id: id)));
                           }, icon: Icon(Icons.edit)),
-                            Icon(Icons.delete)
+                            IconButton(onPressed: (){
+                                      delete(id);
+                            }, icon: Icon(Icons.delete))
                           ],
                         ),
                       ),

@@ -41,6 +41,7 @@ class edit extends StatelessWidget {
                 MaterialButton(
                   onPressed: () {
                     add(name.text, number.text);
+                    Navigator.of(context).pushNamed('home');
                   },
                   elevation: 4,
                   child: Padding(
