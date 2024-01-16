@@ -42,14 +42,14 @@ class _readState extends State<read> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       title:Text(snap['name']),
-                      subtitle:Text(snap['number'].toString()),
+                      subtitle:Text(snap['number']),
                       trailing: Container(
                         width: 200,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             IconButton(onPressed: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=> update(id: id)));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> update(enableTextField: true, id: id, name: snap['name'], number: snap['number'])));
                           }, icon: Icon(Icons.edit)),
                             IconButton(onPressed: (){
                                       delete(id);

@@ -1,25 +1,28 @@
+import 'dart:core';
 import 'dart:js';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:time/add.dart';
+import 'package:time/crud.dart';
 
 class update extends StatelessWidget {
   final String id;
-  update({super.key, required this.id});
+  final String name;
+  final String number;
+  final bool enableTextField;
+  update({super.key, required this.id, required this.name, required this.number,required this.enableTextField});
 
   final TextEditingController updateName = TextEditingController();
   final TextEditingController updateNumber = TextEditingController();
 
-  Update(String _name,String _number) async{
-   final result = await FirebaseFirestore.instance.collection('time').doc(id).update({
-      'name':_name,
-      'number':_number,
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+    enableTextField? WidgetsBinding.instance.addPostFrameCallback((_) {
+      updateName.text=name;
+      updateNumber.text = number;
+    }):null;
     return Scaffold(
       appBar: AppBar(
         title: Text('CRUD'),
@@ -32,17 +35,21 @@ class update extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                TextField(
+                TextFormField(
+                  enabled: enableTextField,
                   controller: updateName,
                   keyboardType: TextInputType.text,
+
                 ),
-                TextField(
+                TextFormField(
+                  enabled: enableTextField,
                   controller: updateNumber,
                   keyboardType: TextInputType.number,
+
                 ),
                 MaterialButton(
                   onPressed: () {
-                  Update(updateName.text, updateNumber.text);
+                  Update(updateName.text, updateNumber.text,id);
                   Navigator.of(context).pushNamed('home');
                   },
                   elevation: 4,
