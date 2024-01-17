@@ -30,7 +30,6 @@ class _MyAppState extends State<MyApp> {
       routes: {
         'home' : (context) => read(),
         'edit' : (context) => edit(),
-
       },
     );
   }
